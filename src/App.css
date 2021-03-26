@@ -1,38 +1,240 @@
-.App {
-  text-align: center;
+:root {
+  --headings-labels-buttons-font: "Montserrat", sans-serif;
+  --body-font: "Mulish", sans-serif;
+  --card-panel-background: #0e1a2b;
+  --headings-button-text-labels-color: #ffffff;
+  --text-color: #c1d1e8;
+  --input-background-color: #182c47;
+  --buttons: #5692e8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  color: var(--headings-button-text-labels-color);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p,
+label {
+  font-style: var(--body-font);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--headings-labels-buttons-font);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+input {
+  height: 2em;
+}
+.input-label {
+  display: block;
+  margin-bottom: 0.3em;
+}
+::placeholder {
+  color: var(--text-color);
+  opacity: 1;
+}
+.input-field {
+  background-color: var(--input-background-color);
+  display: block;
+  border: none;
+  width: 100%;
+  color: var(--text-color);
+}
+.app {
+  background-image: linear-gradient(#081221, #03080f);
+  height: 100vh;
+}
+textarea {
+  width: 100%;
+  background-color: var(--input-background-color);
+  border: none;
+}
+.contact-detail {
   display: flex;
+  justify-content: space-between;
+}
+.contact-detail .input-container {
+  width: 47%;
+}
+.app {
+  overflow: scroll;
+}
+.app::-webkit-scrollbar {
+  display: none;
+}
+.filter {
+  background-color: var(--card-panel-background);
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 35vh;
+}
+.filter-option {
+  background-color: var(--input-background-color);
+  color: var(--text-color);
+  flex-grow: 1;
+  border: none;
+  height: 2em;
+}
+.option-container {
+  width: 100%;
+  color: var(--text-color);
+}
+.option-container {
+  display: flex;
+}
+option {
+  color: var(--text-color);
+}
+.game-card {
+  width: 100%;
+  position: relative;
+  margin: 1.5em 0;
+}
+.black {
+  background-color: black;
+  min-height: 7em;
+}
+.number-wrapper {
+  position: absolute;
+  background-color: var(--buttons);
+  padding: 0.3em;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 50%;
+  right: 1em;
+  top: 1em;
+}
+.list {
+  overflow: scroll;
+  height: 45vh;
+}
+.list::-webkit-scrollbar {
+  display: none;
+}
+button {
+  height: 2em;
+  border-radius: 0.2em;
+}
+.arrow {
+  width: 1.5em;
+  text-align: center;
+  background-color: var(--buttons);
+  cursor: pointer;
+}
+.details {
+  padding: 1em;
+}
+.clear,
+.send {
+  background-color: var(--buttons);
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+}
+.clear:focus,
+.send:focus {
+  outline: none;
+  box-shadow: none;
+}
+.send {
+  width: fit-content;
+  align-self: flex-end;
+}
+.shadow {
+  display: none;
+  position: absolute;
+  transform: translate(-25px, -20px);
+  opacity: 0.1;
+  color: var(--text-color);
+  font-size: 1.5em;
+  top: 0;
+}
+.header-container {
+  margin: 0 1em;
+}
+.header {
+  position: relative;
+  cursor: pointer;
+  margin: 1.5em 1.5em 1.5em 1em;
+}
+.active {
+  display: block;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contact-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-form {
+  background-color: var(--card-panel-background);
+  padding: 1em;
+  height: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 600px) {
+  .number-wrapper {
+    position: relative;
+    margin: 0 2em;
+    align-self: center;
   }
-  to {
-    transform: rotate(360deg);
+  .game-card {
+    display: flex;
+    background-color: var(--card-panel-background);
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .contact-container {
+    width: 33em;
+  }
+  .black {
+    width: 22%;
+  }
+  .details {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .body {
+    display: flex;
+    justify-content: space-around;
+    min-width: 90%;
+    padding: 0 3%;
+  }
+  .filter {
+    width: 20%;
+  }
+  .list {
+    width: 70%;
+    height: 90vh;
+  }
+
+  .header-container {
+    display: flex;
+    margin: 1em 6.5em;
+  }
+  .header-container h1 {
+    margin-right: 2em;
+  }
+  .clear {
+    width: fit-content;
+    align-self: flex-end;
   }
 }
